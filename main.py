@@ -12,7 +12,12 @@ from tools import load_reports, save_reports, validate_image
 
 
 BASE_DIR = Path(__file__).resolve().parent
-REPORTS_PATH = Path(os.environ.get("FINDIT_DATA_FILE", BASE_DIR / "data" / "reports.json"))
+DEFAULT_REPORTS_PATH = (
+    Path("/tmp/findit-reports.json")
+    if os.environ.get("VERCEL") == "1"
+    else BASE_DIR / "data" / "reports.json"
+)
+REPORTS_PATH = Path(os.environ.get("FINDIT_DATA_FILE", DEFAULT_REPORTS_PATH))
 
 app = FastAPI(title="FindIt AI", version="1.0.0")
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")

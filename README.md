@@ -40,7 +40,8 @@ in each hosting provider. Render can deploy the blueprint or use
 `uvicorn main:app --host 0.0.0.0 --port $PORT`. Vercel detects the FastAPI
 application in `main.py` from `requirements.txt` and routes requests to it.
 
-The JSON file is suitable for local demos only. Serverless instances and
-ephemeral hosting filesystems do not provide durable shared storage. Before
-using this publicly, configure a persistent database, authentication, privacy
-controls, rate limiting, safe contact methods, and secure image storage.
+The JSON file is suitable for demos only. Vercel stores it in per-instance
+`/tmp`, and Render's free filesystem is ephemeral; neither provides durable,
+shared storage. Before using this publicly, configure a persistent database,
+authentication, privacy controls, rate limiting, safe contact methods, and
+secure image storage.

@@ -1,9 +1,10 @@
-# FindIt
+# FindIt AI
 
-A text-first lost-and-found board. Post a lost or found item with its category,
-location, description, and optional date and image URL. Potential matches are
-ranked using description (60%), category (20%), location (12%), and date (8%).
-The match score is a demo heuristic, not a validated measure of accuracy.
+A text-first lost-and-found app. Post a lost or found item with its category,
+location, description, and optional date or image URL. Potential matches compare
+description (60%), category (20%), location (12%), and date (8%). This version
+uses text-overlap heuristics, not a trained AI model or image-recognition system;
+match scores are suggestions, not validated accuracy measurements.
 
 ## Run locally
 
